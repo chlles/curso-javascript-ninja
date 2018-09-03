@@ -5,7 +5,7 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 ```js
 // Crie uma função que receba dois argumentos e retorne a soma dos mesmos.
 function somaNumeros(x, y){
-  return x + y
+  return x + y;
 }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
@@ -22,14 +22,18 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
     O valor da variável agora é VALOR.
 Onde VALOR é o novo valor da variável.
 */
-function novaFun(x){
-  x = 15;
-  return 'O valor da variável agora é' + x
+
+function novaFun(){
+  xVar = 15;
+  return 'O valor da variável agora é' + xVar;
+}
 
 // Invoque a função criada acima.
-novaFun(Nova);
+
+novaFun();
 
 // Qual o retorno da função? (Use comentários de bloco).
+
 /*
   Retorna "O valor da variável agora é 15"
 */
@@ -43,10 +47,10 @@ Crie uma função com as seguintes características:
 */
 
 function qualquerFunc(x,y,z){
-    if (x == '' | y == '' | z == ''){
-      "Preencha todos os valores corretamente!"
-    };
-  return ( x * y * z ) + 2
+    if (x === undefined || y === undefined || z === undefined ){
+      return 'Preencha todos os valores corretamente!';
+    }
+    return ( x * y * z ) + 2;
 }
 
 // Invoque a função criada acima, passando só dois números como argumento.
@@ -71,20 +75,24 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function ultimaFunc(x,y,z){
-    if {
-    
-    }elseif{
-    
-    }elseif{
-    
-    }elseif (x == '' | y == '' | z == ''){
+    if( x !== undefined && y === undefined && z === undefined ) {
+      return x;
+    }else if ( x !== undefined && y !== undefined && z === undefined ){
+      return x + y;
+    }else if ( x !== undefined && y !== undefined && z !== undefined ){
+      return (x+y)/z;
+    }else if ( x === undefined && y === undefined && z === undefined ){
       return false
     } else{
       return null
     }
-  return ( x * y * z ) + 2
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-?
+
+ultimaFunc(5);  // 5
+ultimaFunc(5, 5);  // 10
+ultimaFunc(5, 5 , 2);  // 5
+ultimaFunc();  // false
+
 ```
