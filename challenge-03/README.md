@@ -174,11 +174,22 @@ com metragens diferentes passadas por parâmetro.
 */
 
 > pessoa.andar(3);
-true
+undefined
 > pessoa.andar(8);
-true
-> pessoa.andar(22);
-true
+undefined
+> pessoa.andar(5);
+undefined
+> pessoa
+{ nome: 'Michelle',
+  sobrenome: 'Fernandes',
+  sexo: 'feminino',
+  idade: 21,
+  altura: 1.57,
+  peso: 54,
+  andando: true, //ainda está andando
+  caminhouQuantosMetros: 16,
+  andar: [Function],
+  parar: [Function] }
 >
 
 /*
@@ -186,28 +197,40 @@ A pessoa ainda está andando? (Use a instrução para responder e comentários
 inline ao lado da instrução para mostrar qual foi a resposta retornada)
 */
 
-> pessoa.andar();
-true  // sim
+  andando: true, //ainda está andando
 
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
 
 > pessoa.parar();
-false
+undefined
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
 comentários inline ao lado da instrução para mostrar a resposta retornada)
 */
 
-??????????????
+> pessoa
+{ nome: 'Michelle',
+  sobrenome: 'Fernandes',
+  sexo: 'feminino',
+  idade: 21,
+  altura: 1.57,
+  peso: 54,
+  andando: false, //parou
+  caminhouQuantosMetros: 16,
+  andar: [Function],
+  parar: [Function] }
+>
 
 /*
 Quantos metros a pessoa andou? (Use uma instrução para responder e comentários
 inline ao lado da instrução para mostrar a resposta retornada)
 */
-?
+
+  caminhouQuantosMetros: 16,
+
 
 /*
 Agora vamos deixar a brincadeira um pouco mais divertida! :D
@@ -226,9 +249,51 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
-?
+
+pessoa.apresentacao = function(){
+	var sexo = 'o';
+	var idadeAnos = 'anos';
+	var metrosCaminhados = 'metros';
+	
+	if ( pessoa.sexo === 'Feminino' ) {
+		sexo = 'a' ;
+	}
+	
+	if ( pessoa.idade === 1 ){
+		idadeAnos = 'ano';
+	}
+	
+	if ( pessoa.caminhouQuantosMetros === 1 ){
+		metrosCaminhados = 'metro';
+	}
+	
+	return 'Olá, eu sou '  + sexo + ' ' + pessoa.nome +  ' ' + pessoa.sobrenome + ' tenho ' + pessoa.idade + ' ' + 
+	idadeAnos +', '  +  pessoa.altura + ', meu peso é ' +  pessoa.peso + 'kg ' +
+	' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros +  ' ' + metrosCaminhados + 	'!';
+}
 
 // Agora, apresente-se ;)
 
+> pessoa.sexo = 'Feminino';
+'Feminino'
+> pessoa
+{ nome: 'Michelle',
+  sobrenome: 'Fernandes',
+  sexo: 'Feminino',
+  idade: 21,
+  altura: 1.57,
+  peso: 54,
+  andando: false,
+  caminhouQuantosMetros: 16,
+  andar: [Function],
+  parar: [Function],
+  nomeCompleto: [Function],
+  mostrarIdade: [Function],
+  mostrarPeso: [Function],
+  mostrarAltura: [Function],
+  apresentacao: [Function] }
+> pessoa.apresentacao();
+'Olá, eu sou a Michelle Fernandes tenho 21 anos, 1.57, meu peso é 54kg  e, só hoje, eu já caminhei 16 metros!'
+>
 
 ```
