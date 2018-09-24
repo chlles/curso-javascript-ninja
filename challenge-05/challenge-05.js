@@ -2,17 +2,23 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+var carro = ['Legal', 3, 'azul', true, 24.500];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+function meuCarro(carro){
+    return carro
+};
+
+meuCarro(carro);
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
+
+meuCarro(carro[2]);
+'azul'
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -20,18 +26,29 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+
+function outraFunc(array, num){
+  return array[num]
+}
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+
+var carro = ['Legal', 3, 'azul', true, 24.500];
+
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+
+function NomeDaFunc(array, num){
+  return array[num]
+}
+
+NomeDaFunc(carro, 2)
+'azul'
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,8 +64,32 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
 
+function book(nome){
+  var meuLivro = {
+    Twilight: [
+      quantidadePaginas: 456,
+      autor:'Pixel Wolf',
+      editora:'Aurora'
+    ],
+    NewMoon: [
+      quantidadePaginas: 256,
+      autor:'Pixel Wolf',
+      editora:'Aurora'
+    ],
+    BreakingDawn: [
+      quantidadePaginas: 839,
+      autor:'Pixel Wolf',
+      editora:'Aurora'
+    ]
+  };
+  
+  if nome is null {
+    return meuLivro
+  }else{
+    return meuLivro[nome]
+  }
+}
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
